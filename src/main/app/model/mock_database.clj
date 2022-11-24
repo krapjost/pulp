@@ -10,7 +10,8 @@
 ;; is lookup refs and entity refs.  You can just wing it on
 ;; everything else.
 (def schema {:account/id {:db/cardinality :db.cardinality/one
-                          :db/unique      :db.unique/identity}})
+                          :db/unique      :db.unique/identity}
+             :book/id    {:db/unique :db.unique/identity}})
 
 (defn new-database [] (d/create-conn schema))
 
